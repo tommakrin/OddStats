@@ -14,11 +14,9 @@ function Npos($haystack, $needle, $position)
 {
     if ($position == '1') {
         return strpos($haystack, $needle);
-    }
-    elseif ($position > '1') {
+    } elseif ($position > '1') {
         return strpos($haystack, $needle, Npos($haystack, $needle, $position - 1) + strlen($needle));
-    }
-    else {
+    } else {
         return error_log('Warning: Argument $position out of range (must be positive integer).');
     }
 }
